@@ -1,0 +1,4 @@
+patterns:
+  - id: generic-1
+    pattern: substring-code-1
+    message: hello world
