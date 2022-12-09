@@ -22,4 +22,8 @@ async function main() {
   const logs = await getLogs({ projectId, jobId });
   const pattern = findPattern(logs);
   console.log(pattern);
+
+  if (pattern) {
+    console.log(`line: ${input}#L${pattern.line}`);
+  }
 }

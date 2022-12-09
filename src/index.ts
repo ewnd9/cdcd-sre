@@ -23,7 +23,7 @@ server.post('/api/v1/gitlab/webhook', async (request) => {
       await axios.post(env.WEBHOOK_URL, {
         text: [
           pattern ? `${pattern.id}: ${pattern.message}` : 'not pattern',
-          `${job.url} (${job.name} in ${job.duration}ms, allow_failure: ${job.isFailureAllowed})`,
+          `${job.url}#L${pattern.line} (${job.name} in ${job.duration}ms, allow_failure: ${job.isFailureAllowed})`,
         ].join('\n\n'),
       });
     }
