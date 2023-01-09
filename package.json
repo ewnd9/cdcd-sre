@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start:dev": "ts-node -r dotenv/config src/",
+    "build": "tsc",
     "cli": "ts-node -r dotenv/config scripts/cli"
   },
   "dependencies": {
