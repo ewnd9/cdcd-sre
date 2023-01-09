@@ -8,7 +8,9 @@
     "experimentalDecorators": true,
     "target": "es2019",
     "sourceMap": true,
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "outDir": "./dist",
   },
+  "include": ["src"],
   "exclude": ["node_modules"]
 }
