@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import fs from 'fs';
+import fs from 'fs/promises';
 import { env } from './config';
 
 const client = axios.create({
@@ -22,7 +22,7 @@ export async function processWebhook(body: any) {
   } = body;
 
   if (process.env.WRITE_REQUESTS) {
-    fs.writeFileSync(
+    await fs.writeFile(
       `data/job-${id}-${status}.json`,
       JSON.stringify(body, null, 2)
     );
