@@ -2,6 +2,7 @@ import fastify from 'fastify';
 import metricsPlugin from 'fastify-metrics';
 
 import { env } from './config';
+import { GitLabWebhookBody } from './types';
 import { processGitLabWebhook } from './use-cases/process-gitlab-webhook';
 
 main()
@@ -26,7 +27,7 @@ async function main() {
   });
 
   server.post('/api/v1/gitlab/webhook', async (request) => {
-    await processGitLabWebhook(request.body);
+    await processGitLabWebhook(request.body as GitLabWebhookBody);
     return '';
   });
 
